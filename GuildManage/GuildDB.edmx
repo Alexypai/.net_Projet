@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GuildeManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'GuildeManage.dbo.Héros' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="Héros">
+          <Key>
+            <PropertyRef Name="Nom" />
+            <PropertyRef Name="Prénom" />
+            <PropertyRef Name="Spécialité" />
+            <PropertyRef Name="Classe_héro" />
+            <PropertyRef Name="Héro_id" />
+          </Key>
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prénom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Spécialité" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Classe_héro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Niveau" Type="int" />
+          <Property Name="Puissance" Type="int" />
+          <Property Name="Réussite" Type="int" />
+          <Property Name="Réputation" Type="varchar" MaxLength="50" />
+          <Property Name="Héro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'GuildeManage.dbo.Objets' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+        <EntityType Name="Objets">
+          <Key>
+            <PropertyRef Name="Nom" />
+            <PropertyRef Name="Ilvl" />
+            <PropertyRef Name="Quantité" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Prix" />
+            <PropertyRef Name="Objet_id" />
+          </Key>
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ilvl" Type="int" Nullable="false" />
+          <Property Name="Quantité" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Prix" Type="int" Nullable="false" />
+          <Property Name="Objet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GuildeManageModelStoreContainer">
+          <EntitySet Name="Héros" EntityType="Self.Héros" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Héros].[Nom] AS [Nom], 
+    [Héros].[Prénom] AS [Prénom], 
+    [Héros].[Spécialité] AS [Spécialité], 
+    [Héros].[Classe_héro] AS [Classe_héro], 
+    [Héros].[Niveau] AS [Niveau], 
+    [Héros].[Puissance] AS [Puissance], 
+    [Héros].[Réussite] AS [Réussite], 
+    [Héros].[Réputation] AS [Réputation], 
+    [Héros].[Héro_id] AS [Héro_id]
+    FROM [dbo].[Héros] AS [Héros]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Objets" EntityType="Self.Objets" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Objets].[Nom] AS [Nom], 
+    [Objets].[Ilvl] AS [Ilvl], 
+    [Objets].[Quantité] AS [Quantité], 
+    [Objets].[Description] AS [Description], 
+    [Objets].[Prix] AS [Prix], 
+    [Objets].[Objet_id] AS [Objet_id]
+    FROM [dbo].[Objets] AS [Objets]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GuildeManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Héros">
+          <Key>
+            <PropertyRef Name="Nom" />
+            <PropertyRef Name="Prénom" />
+            <PropertyRef Name="Spécialité" />
+            <PropertyRef Name="Classe_héro" />
+            <PropertyRef Name="Héro_id" />
+          </Key>
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prénom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Spécialité" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Classe_héro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Niveau" Type="Int32" />
+          <Property Name="Puissance" Type="Int32" />
+          <Property Name="Réussite" Type="Int32" />
+          <Property Name="Réputation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Héro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Objets">
+          <Key>
+            <PropertyRef Name="Nom" />
+            <PropertyRef Name="Ilvl" />
+            <PropertyRef Name="Quantité" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Prix" />
+            <PropertyRef Name="Objet_id" />
+          </Key>
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ilvl" Type="Int32" Nullable="false" />
+          <Property Name="Quantité" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prix" Type="Int32" Nullable="false" />
+          <Property Name="Objet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="GuildeManageEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Héros" EntityType="Self.Héros" />
+          <EntitySet Name="Objets" EntityType="Self.Objets" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GuildeManageModelStoreContainer" CdmEntityContainer="GuildeManageEntities">
+          <EntitySetMapping Name="Héros">
+            <EntityTypeMapping TypeName="GuildeManageModel.Héros">
+              <MappingFragment StoreEntitySet="Héros">
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prénom" ColumnName="Prénom" />
+                <ScalarProperty Name="Spécialité" ColumnName="Spécialité" />
+                <ScalarProperty Name="Classe_héro" ColumnName="Classe_héro" />
+                <ScalarProperty Name="Niveau" ColumnName="Niveau" />
+                <ScalarProperty Name="Puissance" ColumnName="Puissance" />
+                <ScalarProperty Name="Réussite" ColumnName="Réussite" />
+                <ScalarProperty Name="Réputation" ColumnName="Réputation" />
+                <ScalarProperty Name="Héro_id" ColumnName="Héro_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Objets">
+            <EntityTypeMapping TypeName="GuildeManageModel.Objets">
+              <MappingFragment StoreEntitySet="Objets">
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Ilvl" ColumnName="Ilvl" />
+                <ScalarProperty Name="Quantité" ColumnName="Quantité" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Prix" ColumnName="Prix" />
+                <ScalarProperty Name="Objet_id" ColumnName="Objet_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
