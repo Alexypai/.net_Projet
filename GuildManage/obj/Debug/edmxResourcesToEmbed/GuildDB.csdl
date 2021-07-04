@@ -2,10 +2,6 @@
 <Schema Namespace="GuildeManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Héros">
     <Key>
-      <PropertyRef Name="Nom" />
-      <PropertyRef Name="Prénom" />
-      <PropertyRef Name="Spécialité" />
-      <PropertyRef Name="Classe_héro" />
       <PropertyRef Name="Héro_id" />
     </Key>
     <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -20,11 +16,6 @@
   </EntityType>
   <EntityType Name="Objets">
     <Key>
-      <PropertyRef Name="Nom" />
-      <PropertyRef Name="Ilvl" />
-      <PropertyRef Name="Quantité" />
-      <PropertyRef Name="Description" />
-      <PropertyRef Name="Prix" />
       <PropertyRef Name="Objet_id" />
     </Key>
     <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />

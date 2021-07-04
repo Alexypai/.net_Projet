@@ -4,15 +4,9 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GuildeManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'GuildeManage.dbo.Héros' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+    <Schema Namespace="GuildeManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Héros">
           <Key>
-            <PropertyRef Name="Nom" />
-            <PropertyRef Name="Prénom" />
-            <PropertyRef Name="Spécialité" />
-            <PropertyRef Name="Classe_héro" />
             <PropertyRef Name="Héro_id" />
           </Key>
           <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -25,15 +19,8 @@ avertissement 6002: La table/vue 'GuildeManage.dbo.Héros' n'a pas de clé prima
           <Property Name="Réputation" Type="varchar" MaxLength="50" />
           <Property Name="Héro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'GuildeManage.dbo.Objets' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="Objets">
           <Key>
-            <PropertyRef Name="Nom" />
-            <PropertyRef Name="Ilvl" />
-            <PropertyRef Name="Quantité" />
-            <PropertyRef Name="Description" />
-            <PropertyRef Name="Prix" />
             <PropertyRef Name="Objet_id" />
           </Key>
           <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
@@ -44,41 +31,15 @@ avertissement 6002: La table/vue 'GuildeManage.dbo.Objets' n'a pas de clé prima
           <Property Name="Objet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GuildeManageModelStoreContainer">
-          <EntitySet Name="Héros" EntityType="Self.Héros" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Héros].[Nom] AS [Nom], 
-    [Héros].[Prénom] AS [Prénom], 
-    [Héros].[Spécialité] AS [Spécialité], 
-    [Héros].[Classe_héro] AS [Classe_héro], 
-    [Héros].[Niveau] AS [Niveau], 
-    [Héros].[Puissance] AS [Puissance], 
-    [Héros].[Réussite] AS [Réussite], 
-    [Héros].[Réputation] AS [Réputation], 
-    [Héros].[Héro_id] AS [Héro_id]
-    FROM [dbo].[Héros] AS [Héros]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Objets" EntityType="Self.Objets" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Objets].[Nom] AS [Nom], 
-    [Objets].[Ilvl] AS [Ilvl], 
-    [Objets].[Quantité] AS [Quantité], 
-    [Objets].[Description] AS [Description], 
-    [Objets].[Prix] AS [Prix], 
-    [Objets].[Objet_id] AS [Objet_id]
-    FROM [dbo].[Objets] AS [Objets]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Héros" EntityType="Self.Héros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Objets" EntityType="Self.Objets" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GuildeManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Héros">
           <Key>
-            <PropertyRef Name="Nom" />
-            <PropertyRef Name="Prénom" />
-            <PropertyRef Name="Spécialité" />
-            <PropertyRef Name="Classe_héro" />
             <PropertyRef Name="Héro_id" />
           </Key>
           <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -93,11 +54,6 @@ avertissement 6002: La table/vue 'GuildeManage.dbo.Objets' n'a pas de clé prima
         </EntityType>
         <EntityType Name="Objets">
           <Key>
-            <PropertyRef Name="Nom" />
-            <PropertyRef Name="Ilvl" />
-            <PropertyRef Name="Quantité" />
-            <PropertyRef Name="Description" />
-            <PropertyRef Name="Prix" />
             <PropertyRef Name="Objet_id" />
           </Key>
           <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
