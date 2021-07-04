@@ -13,10 +13,10 @@ namespace GuildManage
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GuildeManageEntities : DbContext
+    public partial class GuildeManageEntities1 : DbContext
     {
-        public GuildeManageEntities()
-            : base("name=GuildeManageEntities")
+        public GuildeManageEntities1()
+            : base("name=GuildeManageEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace GuildManage
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<HerObjet> HerObjet { get; set; }
         public virtual DbSet<Héros> Héros { get; set; }
         public virtual DbSet<Objets> Objets { get; set; }
     }

@@ -20,21 +20,23 @@ namespace GuildManage
 
         private void GuildeView_Load(object sender, EventArgs e)
         {
-            GuildeManageEntities entities = new GuildeManageEntities();
+            GuildeManageEntities1 entities = new GuildeManageEntities1();
             List<Héros> listHéros = entities.Héros.ToList();
             dataHeroGrid.DataSource = listHéros;
+
+
         }
 
         private void dataHeroGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            GuildeManageEntities entities = new GuildeManageEntities();
+            GuildeManageEntities1 entities = new GuildeManageEntities1();
             entities.SaveChanges();
         }
 
         private void refersheData()
         {
             dataHeroGrid.DataSource = null;
-            GuildeManageEntities entite = new GuildeManageEntities();
+            GuildeManageEntities1 entite = new GuildeManageEntities1();
             List<Héros> listArticles = entite.Héros.ToList();
             dataHeroGrid.DataSource = listArticles;
         }
@@ -55,7 +57,7 @@ namespace GuildManage
         {
             if (dataHeroGrid.Rows.GetRowCount(DataGridViewElementStates.Selected) > 0){
 
-                GuildeManageEntities entite = new GuildeManageEntities();
+                GuildeManageEntities1 entite = new GuildeManageEntities1();
                 int idHéro = int.Parse(dataHeroGrid.SelectedRows[0].Cells[8].Value.ToString());
                 Console.WriteLine(idHéro);
 
@@ -90,6 +92,7 @@ namespace GuildManage
                 PuissanceBox.Value = decimal.Parse(dataHeroGrid.SelectedRows[0].Cells[5].Value.ToString());
                 RéussiteBox.Value = decimal.Parse(dataHeroGrid.SelectedRows[0].Cells[6].Value.ToString());
                 RéputBox.Text = dataHeroGrid.SelectedRows[0].Cells[7].Value.ToString();
+                HeroID.Value = decimal.Parse(dataHeroGrid.SelectedRows[0].Cells[8].Value.ToString());
 
             }
         }
@@ -99,7 +102,7 @@ namespace GuildManage
             if (dataHeroGrid.Rows.GetRowCount(DataGridViewElementStates.Selected) > 0)
             {
 
-                GuildeManageEntities entite = new GuildeManageEntities();
+                GuildeManageEntities1 entite = new GuildeManageEntities1();
                 int idHéro = int.Parse(dataHeroGrid.SelectedRows[0].Cells[8].Value.ToString());
                 Console.WriteLine(idHéro);
 
@@ -124,13 +127,33 @@ namespace GuildManage
             NewHero.Réussite = (int)RéussiteBox.Value;
             NewHero.Réputation = RéputBox.Text;
 
-            GuildeManageEntities entite = new GuildeManageEntities();
+            GuildeManageEntities1 entite = new GuildeManageEntities1();
             entite.Héros.Add(NewHero);
             entite.SaveChanges();
 
             this.refersheData();
 
             viderLesChamps();
+        }
+
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+            GuildeManageEntities1 entite = new GuildeManageEntities1();
+
+            int idHéro = (int)HeroID.Value;
+            HerObjet[] listSac = entite.HerObjet.ToList();
+            foreach (Type HerObjet in listSac)
+            {
+
+                // Statements to Execute
+
+            }
+            Héros ShowHero = entite.Héros.Where(a => a.Héro_id == idHéro).FirstOrDefault();
+            List<Héros> listHero = new List<Héros>(); 
+            listHero.Add(ShowHero);
+            dataGridSaccoche.DataSource = listHero;
         }
     }
 }
