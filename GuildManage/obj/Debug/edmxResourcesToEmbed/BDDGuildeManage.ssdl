@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GuildeManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HerObjet">
+    <Key>
+      <PropertyRef Name="IDHO" />
+    </Key>
+    <Property Name="HeroID" Type="int" Nullable="false" />
+    <Property Name="ObjetID" Type="int" Nullable="false" />
+    <Property Name="Quantité" Type="int" Nullable="false" />
+    <Property Name="IDHO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Héros">
+    <Key>
+      <PropertyRef Name="Héro_id" />
+    </Key>
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prénom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Spécialité" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Classe_héro" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Niveau" Type="int" />
+    <Property Name="Puissance" Type="int" />
+    <Property Name="Réussite" Type="int" />
+    <Property Name="Réputation" Type="varchar" MaxLength="50" />
+    <Property Name="Héro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Objets">
+    <Key>
+      <PropertyRef Name="Objet_id" />
+    </Key>
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ilvl" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Prix" Type="int" Nullable="false" />
+    <Property Name="Objet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantité" Type="int" />
+  </EntityType>
+  <EntityContainer Name="GuildeManageModelStoreContainer">
+    <EntitySet Name="HerObjet" EntityType="Self.HerObjet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Héros" EntityType="Self.Héros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Objets" EntityType="Self.Objets" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

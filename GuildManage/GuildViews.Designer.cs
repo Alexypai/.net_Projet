@@ -51,12 +51,30 @@ namespace GuildManage
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridSaccoche = new System.Windows.Forms.DataGridView();
             this.HeroID = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.QuantiteObjetBox = new System.Windows.Forms.NumericUpDown();
+            this.PrixObjetBox = new System.Windows.Forms.NumericUpDown();
+            this.LvlObjetBox = new System.Windows.Forms.NumericUpDown();
+            this.DesObjetBox = new System.Windows.Forms.TextBox();
+            this.NomObjetBox = new System.Windows.Forms.TextBox();
+            this.AjoutObjet = new System.Windows.Forms.Button();
+            this.SupprimerObjet = new System.Windows.Forms.Button();
+            this.ModifierObjet = new System.Windows.Forms.Button();
+            this.ObjetID = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataHeroGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NiveauBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PuissanceBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RéussiteBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSaccoche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeroID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantiteObjetBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrixObjetBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LvlObjetBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ObjetID)).BeginInit();
             this.SuspendLayout();
             // 
             // dataHeroGrid
@@ -249,6 +267,7 @@ namespace GuildManage
             this.dataGridSaccoche.Name = "dataGridSaccoche";
             this.dataGridSaccoche.Size = new System.Drawing.Size(865, 222);
             this.dataGridSaccoche.TabIndex = 25;
+            this.dataGridSaccoche.SelectionChanged += new System.EventHandler(this.dataGridSaccoche_SelectionChanged);
             // 
             // HeroID
             // 
@@ -261,19 +280,161 @@ namespace GuildManage
             this.HeroID.Name = "HeroID";
             this.HeroID.Size = new System.Drawing.Size(120, 20);
             this.HeroID.TabIndex = 26;
-            this.HeroID.Value = new decimal(new int[] {
-            2,
+            this.HeroID.Visible = false;
+            this.HeroID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(56, 474);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Quantité Objet";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(78, 451);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Prix Objet";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(63, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 37;
+            this.label10.Text = "Niveau Objet";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(44, 400);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 13);
+            this.label11.TabIndex = 36;
+            this.label11.Text = "Description Objet";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(75, 374);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Nom Objet";
+            // 
+            // QuantiteObjetBox
+            // 
+            this.QuantiteObjetBox.Location = new System.Drawing.Point(138, 475);
+            this.QuantiteObjetBox.Name = "QuantiteObjetBox";
+            this.QuantiteObjetBox.Size = new System.Drawing.Size(231, 20);
+            this.QuantiteObjetBox.TabIndex = 34;
+            // 
+            // PrixObjetBox
+            // 
+            this.PrixObjetBox.Location = new System.Drawing.Point(138, 449);
+            this.PrixObjetBox.Maximum = new decimal(new int[] {
+            276447232,
+            23283,
+            0,
+            0});
+            this.PrixObjetBox.Name = "PrixObjetBox";
+            this.PrixObjetBox.Size = new System.Drawing.Size(231, 20);
+            this.PrixObjetBox.TabIndex = 33;
+            // 
+            // LvlObjetBox
+            // 
+            this.LvlObjetBox.Location = new System.Drawing.Point(138, 423);
+            this.LvlObjetBox.Maximum = new decimal(new int[] {
+            450,
             0,
             0,
             0});
-            this.HeroID.Visible = false;
-            this.HeroID.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.LvlObjetBox.Name = "LvlObjetBox";
+            this.LvlObjetBox.Size = new System.Drawing.Size(231, 20);
+            this.LvlObjetBox.TabIndex = 32;
+            // 
+            // DesObjetBox
+            // 
+            this.DesObjetBox.Location = new System.Drawing.Point(138, 397);
+            this.DesObjetBox.Name = "DesObjetBox";
+            this.DesObjetBox.Size = new System.Drawing.Size(231, 20);
+            this.DesObjetBox.TabIndex = 31;
+            // 
+            // NomObjetBox
+            // 
+            this.NomObjetBox.Location = new System.Drawing.Point(138, 371);
+            this.NomObjetBox.Name = "NomObjetBox";
+            this.NomObjetBox.Size = new System.Drawing.Size(231, 20);
+            this.NomObjetBox.TabIndex = 30;
+            // 
+            // AjoutObjet
+            // 
+            this.AjoutObjet.Location = new System.Drawing.Point(12, 545);
+            this.AjoutObjet.Name = "AjoutObjet";
+            this.AjoutObjet.Size = new System.Drawing.Size(110, 29);
+            this.AjoutObjet.TabIndex = 42;
+            this.AjoutObjet.Text = "Ajouter";
+            this.AjoutObjet.UseVisualStyleBackColor = true;
+            this.AjoutObjet.Click += new System.EventHandler(this.AjoutObjet_Click);
+            // 
+            // SupprimerObjet
+            // 
+            this.SupprimerObjet.Location = new System.Drawing.Point(259, 545);
+            this.SupprimerObjet.Name = "SupprimerObjet";
+            this.SupprimerObjet.Size = new System.Drawing.Size(110, 29);
+            this.SupprimerObjet.TabIndex = 41;
+            this.SupprimerObjet.Text = "Supprimer";
+            this.SupprimerObjet.UseVisualStyleBackColor = true;
+            this.SupprimerObjet.Click += new System.EventHandler(this.SupprimerObjet_Click);
+            // 
+            // ModifierObjet
+            // 
+            this.ModifierObjet.Location = new System.Drawing.Point(138, 545);
+            this.ModifierObjet.Name = "ModifierObjet";
+            this.ModifierObjet.Size = new System.Drawing.Size(110, 29);
+            this.ModifierObjet.TabIndex = 40;
+            this.ModifierObjet.Text = "Modifier";
+            this.ModifierObjet.UseVisualStyleBackColor = true;
+            this.ModifierObjet.Click += new System.EventHandler(this.ModifierObjet_Click);
+            // 
+            // ObjetID
+            // 
+            this.ObjetID.Location = new System.Drawing.Point(177, 519);
+            this.ObjetID.Maximum = new decimal(new int[] {
+            -1981284352,
+            -1966660860,
+            0,
+            0});
+            this.ObjetID.Name = "ObjetID";
+            this.ObjetID.Size = new System.Drawing.Size(120, 20);
+            this.ObjetID.TabIndex = 43;
+            this.ObjetID.CursorChanged += new System.EventHandler(this.ObjetID_CursorChanged);
             // 
             // GuildeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1252, 595);
+            this.Controls.Add(this.ObjetID);
+            this.Controls.Add(this.AjoutObjet);
+            this.Controls.Add(this.SupprimerObjet);
+            this.Controls.Add(this.ModifierObjet);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.QuantiteObjetBox);
+            this.Controls.Add(this.PrixObjetBox);
+            this.Controls.Add(this.LvlObjetBox);
+            this.Controls.Add(this.DesObjetBox);
+            this.Controls.Add(this.NomObjetBox);
             this.Controls.Add(this.HeroID);
             this.Controls.Add(this.dataGridSaccoche);
             this.Controls.Add(this.label7);
@@ -305,6 +466,10 @@ namespace GuildManage
             ((System.ComponentModel.ISupportInitialize)(this.RéussiteBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSaccoche)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HeroID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantiteObjetBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrixObjetBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LvlObjetBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ObjetID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +499,19 @@ namespace GuildManage
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridSaccoche;
         private System.Windows.Forms.NumericUpDown HeroID;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown QuantiteObjetBox;
+        private System.Windows.Forms.NumericUpDown PrixObjetBox;
+        private System.Windows.Forms.NumericUpDown LvlObjetBox;
+        private System.Windows.Forms.TextBox DesObjetBox;
+        private System.Windows.Forms.TextBox NomObjetBox;
+        private System.Windows.Forms.Button AjoutObjet;
+        private System.Windows.Forms.Button SupprimerObjet;
+        private System.Windows.Forms.Button ModifierObjet;
+        private System.Windows.Forms.NumericUpDown ObjetID;
     }
 }

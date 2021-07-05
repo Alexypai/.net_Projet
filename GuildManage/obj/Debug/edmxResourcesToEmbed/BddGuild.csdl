@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GuildeManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HerObjet">
+    <Key>
+      <PropertyRef Name="IDHO" />
+    </Key>
+    <Property Name="HeroID" Type="Int32" Nullable="false" />
+    <Property Name="ObjetID" Type="Int32" Nullable="false" />
+    <Property Name="Quantité" Type="Int32" Nullable="false" />
+    <Property Name="IDHO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Héros">
+    <Key>
+      <PropertyRef Name="Héro_id" />
+    </Key>
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prénom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Spécialité" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Classe_héro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Niveau" Type="Int32" />
+    <Property Name="Puissance" Type="Int32" />
+    <Property Name="Réussite" Type="Int32" />
+    <Property Name="Réputation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Héro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Objets">
+    <Key>
+      <PropertyRef Name="Objet_id" />
+    </Key>
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ilvl" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Prix" Type="Int32" Nullable="false" />
+    <Property Name="Objet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Quantité" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="GuildeManageEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HerObjet" EntityType="Self.HerObjet" />
+    <EntitySet Name="Héros" EntityType="Self.Héros" />
+    <EntitySet Name="Objets" EntityType="Self.Objets" />
+  </EntityContainer>
+</Schema>

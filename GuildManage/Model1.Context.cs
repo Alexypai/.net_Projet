@@ -13,10 +13,10 @@ namespace GuildManage
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GuildeManageEntities1 : DbContext
+    public partial class GuildeManageEntities3 : DbContext
     {
-        public GuildeManageEntities1()
-            : base("name=GuildeManageEntities1")
+        public GuildeManageEntities3()
+            : base("name=GuildeManageEntities3")
         {
         }
     
